@@ -1,0 +1,21 @@
+h1, h2, h3, h4, h5, h6{
+    color:green;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+/*
+#turma3C, #turma3C2{
+    color:purple;
+    text-align: left;
+}
+*/
+
+.roxo{
+    color:purple;
+    text-align: left;
+}
+
+p{
+    color:red;
+    font-size: 10x;
+}
