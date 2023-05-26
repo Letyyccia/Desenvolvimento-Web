@@ -2,23 +2,13 @@
 <html lang="en">
 <head>
     <title>Document</title>
-</head>
-<body>
     <script>
-        /*
-        var signo = prompt("Qual é o seu signo?");
-        document.write("O signo de Leticia é "+ signo + "<br>");
-        if (signo.toUpperCase() == "PEIXES"){
-            document.write("Peixes: melhor signo!");
-        }else{
-            document.write("Que pena, signo errado!");
-        }
-        */
 
-        var data_nasc = prompt("Data de nascimento:");
-        console.log(typeof( data_nasc));
+    function verificarData(){
+        var data_nasc = document.getElementsById("textoData").value;
+
         //1- pegar as informaçoes separadas
-        var addos = data_nascimento.split('/');
+        var dados = data_nasc.split('/');
         console.log(dados);
         var dia = dados[0];
         var mes = dados[1];
@@ -31,32 +21,33 @@
         //2 - transformar as informaçoes em numero
         if(ano > 2005){
             //de menor
-            alert("Vc é de menor");
-        }else if (ano < 2005){
-            alert("Vc é de maior");
+            document.getElementById("pTexto").innerHTML = "Menor de idade";
+        }else if (ano > 2005){
+            document.getElementById("pTexto").innerHTML = "Vc é de maior";
         }else{
             if(mes > 5){
-                alert("Vc é de menor");
+                document.getElementById("pTexto").innerHTML ="Vc é de menor";
             }else if (mes < 5){
-                alert("vc é de maior");
+                document.getElementById("pTexto").innerHTML ="vc é de maior";
             }else{
                 if(dia > 24){
-                    alert("vc é de menor");
+                    document.getElementById("pTexto").innerHTML ="vc é de menor";
                 }else{
-                    alert("parabens, vc ja pode ser presa!");
+                    document.getElementById("pTexto").innerHTML ="parabens, vc ja pode ser presa!";
                 }
             }
         }
-
-        //3- verificar o ano
-        //4- se necessario verificar o mes
-
-        //const ANO_ATUAL= 2023;
-        //var idade = ANO_ATUAL - data_nasc ;
-        //document.write("A sua idade é "+ idade);
-
-
+    }
+    
 
     </script>
+</head>
+<body>
+    <p>Digite sua data de nascimento</p>
+    <input type = "text" id="textoData" />
+    <input type = "button" value="Enviar" onclick="verificarDta();"/>
+    <br>
+    <p id="pTexto"></p>
+    
 </body>
 </html>
